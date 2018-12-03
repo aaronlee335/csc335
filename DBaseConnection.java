@@ -81,7 +81,7 @@ public static void main(String[] args) {
 	DBaseConnection dbc = new DBaseConnection();
 	dbc.createUser("aaron", "aaron123", "aaron@aaron.lee", 0);
 	dbc.changePassword("aaron", "123aaron");
-	dbc.checkLoginInfo ("aaron", "123aaron", 0);
+	dbc.checkLoginInfo ("aaron", "123aaron");
 }
 public void createUser(String username, String pass, String email, int status) {
 	String insert = "insert ignore into Users (Username, Password, Email, Status) values ('" + username + "', '" + pass + "', '" + email + "', '" + status +"');";
@@ -106,17 +106,17 @@ public void changePassword(String username, String newPass) {
 	}
 }
 
-public boolean checkLoginInfo(String username, String pass, int status) {
+public boolean checkLoginInfo(String username, String pass) {
 	String query = "select * from Users where Username = '" + username +
 			"' and Password = '" + pass + "';";
 	System.out.println(query);
 	try {
 		ResultSet rs = stmt.executeQuery(query);
-		if(rs.wasNull()) {
-			return false;
+		if(rs.next()) {
+			return true;
 		}
 		else {
-			return true;
+			return false;
 		}
 	} catch (SQLException e) {
 		e.printStackTrace();
@@ -124,3 +124,4 @@ public boolean checkLoginInfo(String username, String pass, int status) {
 	return false;
 }
 }
+

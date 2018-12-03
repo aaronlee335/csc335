@@ -46,13 +46,14 @@ public class connect extends JFrame {
   signIn.addActionListener(new ActionListener() {
 	   // connect is pressed will check field for values  
 	    public void actionPerformed(ActionEvent e) {
+	    	if(!IP.getText().isEmpty()) {
 	    	Client.main();
-	    	if(!IP.getText().isEmpty()&&Client.falsetrue==true) {
-	    	
+	    	if(Client.falsetrue==true) {
+	    		
 	           Login1.ex.setVisible(true);
 	           es.setVisible(false);
 	           
-	    	}
+	    	}}
 	    }
 	    
 	  });

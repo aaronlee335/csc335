@@ -18,7 +18,7 @@ public class Chat extends JFrame{
 	        Chat1();
 	    }
 
-	    public final void Chat1() {
+	    public  void Chat1() {
 	    	JLabel receive,sent, contacts;
 	    	 JTextArea receive1;
 	    	 JTextArea sent1;
@@ -73,7 +73,7 @@ public class Chat extends JFrame{
 	    	    	 // Login1.ex = new Login1();
 	   	           connect.es.setVisible(true);
 	   	           es.setVisible(false);
-	   	          
+	   	          Client.disconnect();
 	    	    }
 	    	  });
 	       changePass.addActionListener(new ActionListener() {

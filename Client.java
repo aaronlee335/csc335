@@ -1,5 +1,6 @@
 package client;
 
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -8,7 +9,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Client {
-
+	static Client client;
 	// -- port and host name of server
 	private static final int PORT = 8000;
 	
@@ -22,7 +23,7 @@ public class Client {
      Subnet Mask . . . . . . . . . . . : 255.255.240.0
      Default Gateway . . . . . . . . . : 199.107.210.2
 	 */
-    private static final String HOST = connect.IP.getText();//"199.107.222.115";//"localhost";//"127.0.0.1";
+    private static final String HOST = "LOCALHOST";//"199.107.222.115";//"localhost";//"127.0.0.1";
 	// -- the actual host IP address of the machine can
 	//    be found using ipconfig from a command console
 	// private final String HOST = "192.168.20.4";
@@ -41,7 +42,9 @@ public class Client {
 		
 		try {
 			// -- construct the peer to peer socket
-			socket = new Socket(HOST, PORT);
+			System.out.println(connect.IP.getText());
+			socket = new Socket(connect.IP.getText(), 8000);
+			System.out.println(connect.IP.getText());
 			// -- wrap the socket in stream I/O objects
 			datain = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			dataout = new DataOutputStream(socket.getOutputStream());
@@ -98,7 +101,7 @@ public class Client {
 			text += "\n";
 			dataout.writeBytes(text);
 			dataout.flush();
-
+			falsetrue=false;
 			// -- close the peer to peer socket
 			socket.close();
 		} catch (IOException e1) {
@@ -112,8 +115,8 @@ public class Client {
 	public static void main() {
 		// -- instantiate a Client object
 		//    the constructor will attempt to connect to the server
-		Client client = new Client();
 		
+		client=new Client();
 		// -- send message to server and receive reply.
 		String commandString;
 		String replyString;

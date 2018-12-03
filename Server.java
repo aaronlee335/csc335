@@ -1,7 +1,4 @@
-package server;
-
-
-
+package Database;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -17,7 +14,7 @@ public class Server {
 	private ServerSocket serversocket;
 
 	// -- the port number used for client communication
-	private static final int PORT = 8000;
+	private static final int PORT = 6666;
 			
 	// -- list of active client threads by ID number
 	private Vector<ConnectionThread> clientconnections;

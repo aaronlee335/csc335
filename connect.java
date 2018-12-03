@@ -1,4 +1,4 @@
-package client;
+package Database;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -50,7 +50,7 @@ public class connect extends JFrame {
 	    	Client.main();
 	    	if(Client.falsetrue==true) {
 	    		
-	           Login1.ex.setVisible(true);
+//	           Login1.ex.setVisible(true);
 	           es.setVisible(false);
 	           
 	    	}}
@@ -61,15 +61,15 @@ public class connect extends JFrame {
 	public static void main(String[] args) {
 		 es = new connect();
          es.setVisible(true);
-         newUser2.es = new newUser2();
-         newUser2.es.setVisible(false);
-         passwordRecovery.ea = new passwordRecovery();
-         passwordRecovery.ea.setVisible(false);
-         Chat.es = new Chat();
-         Chat.es.setVisible(false);
-         Login1.ex = new Login1();
-         Login1.ex.setVisible(false);
-         changePassword.es = new changePassword();
-         changePassword.es.setVisible(false);
+//         newUser2.es = new newUser2();
+//         newUser2.es.setVisible(false);
+//         passwordRecovery.ea = new passwordRecovery();
+//         passwordRecovery.ea.setVisible(false);
+//         Chat.es = new Chat();
+//         Chat.es.setVisible(false);
+//         Login1.ex = new Login1();
+//         Login1.ex.setVisible(false);
+//         changePassword.es = new changePassword();
+//         changePassword.es.setVisible(false);
 	}
 }

@@ -1,5 +1,4 @@
-package client;
-
+package Database;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -11,7 +10,7 @@ import java.net.UnknownHostException;
 public class Client {
 	static Client client;
 	// -- port and host name of server
-	private static final int PORT = 8000;
+	private static final int PORT = 6666;
 	
 	/*
 	 From ipconfig:
@@ -43,7 +42,7 @@ public class Client {
 		try {
 			// -- construct the peer to peer socket
 			System.out.println(connect.IP.getText());
-			socket = new Socket(connect.IP.getText(), 8000);
+			socket = new Socket(connect.IP.getText(), 6666);
 			System.out.println(connect.IP.getText());
 			// -- wrap the socket in stream I/O objects
 			datain = new BufferedReader(new InputStreamReader(socket.getInputStream()));

@@ -1,5 +1,4 @@
-package server;
-
+package Database;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

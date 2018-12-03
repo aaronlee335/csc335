@@ -50,10 +50,12 @@ public class changePassword extends JFrame{
 	       setSize(350, 350);
 	       setLocationRelativeTo(null);
 	       setDefaultCloseOperation(EXIT_ON_CLOSE);
+	       
 	       signIn.addActionListener(new ActionListener() {
 	    	    public void actionPerformed(ActionEvent e) {
 	    	    if(p1.getPassword().length>0&&!tf1.getText().isEmpty()) {  
-	   	           Chat.es.setVisible(true);
+	   	           
+	    	    	Chat.es.setVisible(true);
 	   	           es.setVisible(false);
 	    	    }
 	    	    }

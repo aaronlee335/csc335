@@ -19,7 +19,7 @@ public class newUser2 extends JFrame{
 	    	JLabel l1,l2, l3;
 	    	 JTextField tf1;
 	    	 JTextField tf2;
-	    	 JPasswordField p1;
+	    	 JTextField p1;
 	       JPanel panel = new JPanel();
 	       getContentPane().add(panel);
 
@@ -36,7 +36,7 @@ public class newUser2 extends JFrame{
 	       l1.setBounds(75,200,200,30);
 	       tf1 = new JTextField();
 	       tf1.setBounds(150, 100, 200, 30);
-	       p1 = new JPasswordField();
+	       p1 = new JTextField();
 	       p1.setBounds(150, 150, 200, 30);
 	       tf2= new JTextField();
 	       tf2.setBounds(150,200,200,30);
@@ -58,10 +58,15 @@ public class newUser2 extends JFrame{
 	    	   
 	    	    public void actionPerformed(ActionEvent e) {
 	    	    //Login1.ex = new Login1();\
-	    	    	if(!tf1.getText().isEmpty()&&!tf2.getText().isEmpty()&& p1.getPassword().length>0) {
+	    	    	if(!tf1.getText().isEmpty()&&!tf2.getText().isEmpty()&& !p1.getText().isEmpty())
+	    	    	{
+	    	    		System.out.println(RegTextHarness.validEmailAddress(tf2.getText()));
+	    	    		
+	    	    		if( RegTextHarness.validEmailAddress(tf2.getText())==true&&RegTextHarness.validPassword(p1.getText())==true) {
 	   	           Login1.ex.setVisible(true);
 	   	          es.setVisible(false);
 	    	    }
+	    	    		}
 	    	    }
 	    	  });
 	    }

@@ -16,14 +16,13 @@ public class Client {
 	 From ipconfig:
 	 
 	 Wireless LAN adapter Wireless Network Connection:
-
      Connection-specific DNS Suffix  . : clunet.edu
      Link-local IPv6 Address . . . . . : fe80::1083:3e22:f5a1:a3ec%11
      IPv4 Address. . . . . . . . . . . : 199.107.222.115 <=======This address works
      Subnet Mask . . . . . . . . . . . : 255.255.240.0
      Default Gateway . . . . . . . . . : 199.107.210.2
 	 */
-    private static final String HOST = "localhost";//"199.107.222.115";//"localhost";//"127.0.0.1";
+    private static final String HOST = connect.IP.getText();//"199.107.222.115";//"localhost";//"127.0.0.1";
 	// -- the actual host IP address of the machine can
 	//    be found using ipconfig from a command console
 	// private final String HOST = "192.168.20.4";
@@ -35,7 +34,7 @@ public class Client {
 	//    to be opened on top of the socket
 	private BufferedReader datain;
 	private DataOutputStream dataout;
-
+	static boolean falsetrue;
 	  	
 	public Client ()
 	{
@@ -46,6 +45,7 @@ public class Client {
 			// -- wrap the socket in stream I/O objects
 			datain = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			dataout = new DataOutputStream(socket.getOutputStream());
+			falsetrue=true;
 		} catch (UnknownHostException e) {
 			System.out.println("Host " + HOST + " at port " + PORT + " is unavailable.");
 			System.exit(1);
@@ -109,7 +109,7 @@ public class Client {
 	}
 	
 	
-	public static void main(String[] args) {
+	public static void main() {
 		// -- instantiate a Client object
 		//    the constructor will attempt to connect to the server
 		Client client = new Client();

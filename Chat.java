@@ -73,6 +73,7 @@ public class Chat extends JFrame{
 	    	    	 // Login1.ex = new Login1();
 	   	           connect.es.setVisible(true);
 	   	           es.setVisible(false);
+	   	          
 	    	    }
 	    	  });
 	       changePass.addActionListener(new ActionListener() {

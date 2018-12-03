@@ -9,12 +9,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class connect extends JFrame {
 	static connect es;
+	static JTextField IP;
 	public connect() {
 		connect1();
 	}
 	public void connect1() {
 	JLabel l2;
-	 JTextField tf1;
+	 
   JPanel panel = new JPanel();
   getContentPane().add(panel);
 
@@ -26,14 +27,14 @@ public class connect extends JFrame {
   l2 = new JLabel("IP Adress");
   l2.setBounds(75,100,200,30);
   
-  tf1 = new JTextField();
-  tf1.setBounds(150, 100, 200, 30);
+  IP = new JTextField();
+  IP.setBounds(150, 100, 200, 30);
  
  
   
   panel.add(l2);
   
-  panel.add(tf1);
+  panel.add(IP);
   
   panel.add(signIn);
   
@@ -45,10 +46,12 @@ public class connect extends JFrame {
   signIn.addActionListener(new ActionListener() {
 	   // connect is pressed will check field for values  
 	    public void actionPerformed(ActionEvent e) {
-	    	if(!tf1.getText().isEmpty()) {
+	    	Client.main();
+	    	if(!IP.getText().isEmpty()&&Client.falsetrue==true) {
 	    	
 	           Login1.ex.setVisible(true);
 	           es.setVisible(false);
+	           
 	    	}
 	    }
 	    
